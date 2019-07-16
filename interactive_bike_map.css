@@ -202,6 +202,10 @@ header h1 {
     #reservation .map {
         width: 60%;
     }
+
+    #reservation aside ul {
+        margin-top: 4rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {}
