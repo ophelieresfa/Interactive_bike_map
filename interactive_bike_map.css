@@ -186,3 +186,7 @@ header h1 {
     padding: 1rem;
     margin: auto;
 }
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1024px) {}
