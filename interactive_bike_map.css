@@ -191,6 +191,10 @@ header h1 {
     #reservation {
         display: flex;
     }
+
+    #reservation .map {
+        width: 60%;
+    }
 }
 
 @media screen and (min-width: 1024px) {}
