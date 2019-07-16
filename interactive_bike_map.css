@@ -128,3 +128,8 @@ header h1 {
     margin: 1rem auto 0 auto;
     text-align: left;
 }
+
+#reservation input {
+    margin: .5rem auto .5rem auto;
+    width: 100px;
+}
