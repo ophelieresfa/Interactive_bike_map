@@ -47,3 +47,8 @@ header h1 {
     padding-top: 2rem;
     text-align: center;
 }
+
+.container img {
+    margin-top: -.5rem;
+    width: 100%;
+}
