@@ -154,6 +154,14 @@ header h1 {
     width: 200px;
 }
 
+#reservation #reserver,
+#reservation #reserv,
+#reservation #signer,
+#reservation #effacer {
+    background-color: #c8a0aa;
+    margin: 1rem auto;
+}
+
 #reservData,
 #reserv_data {
     background-color: #bd9593;
