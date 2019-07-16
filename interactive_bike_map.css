@@ -164,3 +164,8 @@ header h1 {
     text-align: center;
     width: 70%;
 }
+
+#compteur,
+#timer_info {
+    color: white;
+}
