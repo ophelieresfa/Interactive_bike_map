@@ -107,3 +107,7 @@ header h1 {
     list-style-type: none;
     text-align: center;
 }
+
+#reservation aside li {
+    padding: 1rem;
+}
