@@ -87,3 +87,9 @@ header h1 {
 .container li i {
     color: #bd9593;
 }
+
+#reservation .map {
+    height: 450px;
+    margin: auto;
+    padding-top: 1rem;
+}
