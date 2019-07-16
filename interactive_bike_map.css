@@ -111,3 +111,15 @@ header h1 {
 #reservation aside li {
     padding: 1rem;
 }
+
+#reservation form {
+    background-color: #bd9593;
+    border: 1px solid black;
+    display: none;
+    flex-direction: column;
+    height: 27rem;
+    justify-content: center;
+    margin: 1rem auto 1rem auto;
+    text-align: center;
+    width: 80%;
+}
