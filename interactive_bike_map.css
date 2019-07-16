@@ -102,3 +102,8 @@ header h1 {
     padding-bottom: 2rem;
     width: 80%;
 }
+
+#reservation aside ul {
+    list-style-type: none;
+    text-align: center;
+}
