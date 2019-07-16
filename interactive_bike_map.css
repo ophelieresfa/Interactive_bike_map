@@ -1,0 +1,9 @@
+@font-face {
+    font-family:"Black Label";
+    src:url('fonts/black_label/BlackLabel-Light.eot');
+    src:url('fonts/black_label/BlackLabel-Light.eot?#iefix') format("embedded-opentype"),
+    url("fonts/black_label/BlackLabel-Light.woff") format("woff"),
+    url("fonts/black_label/BlackLabel-Light.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
