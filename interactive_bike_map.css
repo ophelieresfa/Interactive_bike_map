@@ -78,3 +78,8 @@ header h1 {
 .container li:nth-child(2) {
     display: none;
 }
+
+.container li button {
+    border-radius: 50%;
+    padding: 1rem;
+}
