@@ -70,3 +70,7 @@ header h1 {
     display: inline-flex;
     list-style-type: none;
 }
+
+.container nav li {
+    padding:1rem;
+}
