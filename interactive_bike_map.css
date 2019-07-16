@@ -93,3 +93,12 @@ header h1 {
     margin: auto;
     padding-top: 1rem;
 }
+
+#reservation aside {
+    background-color: #bd9593;
+    border: 1px solid black;
+    display: none;
+    margin: 1rem auto 1rem auto;
+    padding-bottom: 2rem;
+    width: 80%;
+}
