@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Réservez votre vélo dès à présent via notre carte qui affiche en temps réel la liste des stations de locations de vélos.">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/interactive_bike_map2.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- Use Font Awesome -->
+    <link rel="stylesheet" href="css/normalize.css"> <!-- Launch stylesheet Normalize -->
+    <link rel="stylesheet" href="css/interactive_bike_map2.css"> <!-- Launch stylesheet for html document -->
 </head>
 
 <body>
+
+    <!-- Header part -->
 
     <header>
         <img src="css/img/logo.png" alt="logo vélo">
         <h1>Réservez votre vélo en un seul clic !</h1>
     </header>
+
+    <!-- Slideshow part -->
 
     <div class="container">
         <figure id="slider"> <!-- Container of slides -->
@@ -24,6 +28,9 @@
             <figcaption></figcaption>
         </figure>
     </div>
+
+    <!-- Control button to slideshow part -->
+
     <nav>
         <ul>
             <li>
@@ -49,8 +56,16 @@
         </ul>
     </nav>
 
+    <!-- Map and reservation part -->
+
     <div id="reservation">
+
+        <!-- Map part -->
+
         <div id="map" class="map"></div>
+
+        <!-- Stations informations part -->
+
         <aside>
             <ul id="infos">
                 <li id="status" class="underline"></li>
@@ -61,6 +76,9 @@
             </ul>
             <button type="button" id="reserver">Réserver</button>
         </aside>
+
+        <!-- Form part for reservation -->
+
         <form>
             <label for="lastname">Nom: </label>
             <input type="text" name="lastname" id="lastname">
@@ -69,6 +87,9 @@
             <p id="warning_text"></p>
             <button type="button" id="reserv">Réserver</button>
         </form>
+
+        <!-- Canvas part -->
+
         <div id="canvas_part">
             <p>Signature: </p>
             <canvas id="sign"></canvas>
@@ -78,9 +99,13 @@
         </div>
     </div>
 
+    <!-- Reservation informations part -->
+
     <div id="reservData">
         <p id="timerInfo"></p>
     </div>
+
+    <!-- Reservation informations part -->
 
     <div id="reserv_data">
         <p id="timer_info"></p>
@@ -89,12 +114,12 @@
         <p>Une nouvelle réservation remplacera celle actuelle.</p>
     </div>
 
-    <script src="js/ajax.js"></script>
-    <script src="js/Slider.js"></script>
-    <script src="js/GMap.js"></script>
-    <script src="js/Reservation.js"></script>
-    <script src="js/Canvas.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv8jtD3G7uvgWj5lfDN8XsFWsxpNpjYJI&callback=initMap" async defer>
+    <script src="js/ajax.js"></script> <!-- Script for Ajax -->
+    <script src="js/Slider.js"></script> <!-- Script for slideshow -->
+    <script src="js/GMap.js"></script> <!-- Script for map -->
+    <script src="js/Reservation.js"></script> <!-- Script for reservation -->
+    <script src="js/Canvas.js"></script> <!-- Script for canvas -->
+    <script src="js/script.js"></script> <!-- Script for all Objects -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv8jtD3G7uvgWj5lfDN8XsFWsxpNpjYJI&callback=initMap" async defer></script> <!-- Script for API GoogleMap -->
 </body>
 </html>
