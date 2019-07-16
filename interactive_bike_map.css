@@ -28,3 +28,9 @@ header {
     justify-content: space-between;
     padding: 1rem;
 }
+
+header img {
+    height: 90px;
+    padding-top: .8rem;
+    width: 100px;
+}
