@@ -1,3 +1,5 @@
+/* Add font */
+
 @font-face {
     font-family:"Black Label";
     src:url('fonts/black_label/BlackLabel-Light.eot');
@@ -8,18 +10,26 @@
     font-style:normal;
 }
 
+/* For all */
+
 ul {
     padding: 0;
 }
+
+/* Class */
 
 .underline {
     text-decoration: underline;
 }
 
+/* Properties for body part */
+
 body {
     background-color: #c8a0aa;
     font-family: "Black Label", "sans-serif";
 }
+
+/* Properties for header part */
 
 header {
     background-color: #bd9593;
@@ -39,6 +49,8 @@ header h1 {
     margin-left: 3rem;
     text-align: center;
 }
+
+/* Properties for slideshow part */
 
 .container {
     border: 2px solid black;
@@ -87,6 +99,8 @@ header h1 {
 .container li i {
     color: #bd9593;
 }
+
+/* Properties for map and reservation part */
 
 #reservation .map {
     height: 450px;
@@ -162,6 +176,8 @@ header h1 {
     margin: 1rem auto;
 }
 
+/* Properties for reservation informations part */
+
 #reservData,
 #reserv_data {
     background-color: #bd9593;
@@ -187,7 +203,12 @@ header h1 {
     margin: auto;
 }
 
+/* Properties for screens that have a minimum width of 768px */
+
 @media screen and (min-width: 768px) {
+
+    /* Properties for map and reservation part */
+
     #reservation {
         display: flex;
     }
@@ -208,11 +229,18 @@ header h1 {
     }
 }
 
+/* Properties for screens that have a minimum width of 1024px */
+
 @media screen and (min-width: 1024px) {
+
+    /* Properties for slideshow part */
+
     .container {
         margin: 2rem auto 2rem auto;
         width: 75%;
     }
+
+    /* Properties for reservation informations part */
 
     #reserv_data {
         width: 50%;
