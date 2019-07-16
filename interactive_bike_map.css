@@ -192,6 +192,13 @@ header h1 {
         display: flex;
     }
 
+    #reservation aside,
+    #reservation form,
+    #canvas_part {
+        margin-right: 1rem;
+        width: 35%;
+    }
+
     #reservation .map {
         width: 60%;
     }
