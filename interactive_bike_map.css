@@ -208,4 +208,9 @@ header h1 {
     }
 }
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+    .container {
+        margin: 2rem auto 2rem auto;
+        width: 75%;
+    }
+}
