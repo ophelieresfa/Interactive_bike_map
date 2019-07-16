@@ -34,3 +34,8 @@ header img {
     padding-top: .8rem;
     width: 100px;
 }
+
+header h1 {
+    margin-left: 3rem;
+    text-align: center;
+}
