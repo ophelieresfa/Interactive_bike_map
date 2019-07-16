@@ -104,11 +104,15 @@ nav li i {
 
 /* Properties for map and reservation part */
 
+/* Properties for map part */
+
 #reservation .map {
     height: 450px;
     margin: auto;
     padding-top: 1rem;
 }
+
+/* Properties for stations informations part */
 
 #reservation aside {
     background-color: #bd9593;
@@ -127,6 +131,8 @@ nav li i {
 #reservation aside li {
     padding: 1rem;
 }
+
+/* Properties for form part for reservation */
 
 #reservation form {
     background-color: #bd9593;
@@ -149,6 +155,8 @@ nav li i {
     margin: .5rem auto .5rem auto;
     width: 100px;
 }
+
+/* Properties for canvas part */
 
 #reservation #canvas_part {
     background-color: #bd9593;
@@ -215,6 +223,8 @@ nav li i {
         display: flex;
     }
 
+    /* Properties for stations informations, form, canvas parts */
+
     #reservation aside,
     #reservation form,
     #canvas_part {
@@ -222,9 +232,13 @@ nav li i {
         width: 35%;
     }
 
+    /* Properties for map part */
+
     #reservation .map {
         width: 60%;
     }
+
+    /* Properties for stations informations parts */
 
     #reservation aside ul {
         margin-top: 4rem;
