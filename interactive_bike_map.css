@@ -61,3 +61,7 @@ header h1 {
     padding: 1rem;
     width: 80%;
 }
+
+.container nav {
+    margin-bottom: 2rem;
+}
