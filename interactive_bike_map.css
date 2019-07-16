@@ -123,3 +123,8 @@ header h1 {
     text-align: center;
     width: 80%;
 }
+
+#reservation label {
+    margin: 1rem auto 0 auto;
+    text-align: left;
+}
