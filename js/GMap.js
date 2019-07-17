@@ -21,5 +21,32 @@ class GoogleMap {
                 createMarker(station);
             });
         });
+
+        function createMarker(station) {
+            let green_marker = {
+                url: 'css/img/markers/01.png',
+                scaledSize: new google.maps.Size(25, 40)};
+            let red_marker = {
+                url: 'css/img/markers/02.png',
+                scaledSize: new google.maps.Size(25, 40)};
+            let marker = new google.maps.Marker({
+                position: station.position,
+                map: map,
+                title: station.name,
+                icon: "",});
+            let statusStation = document.getElementById('status');
+            let nameStation = document.getElementById('name');
+            let addressStation = document.getElementById('address');
+            let numbersStation = document.getElementById('numbers');
+            let bikesStation = document.getElementById('bikes');
+
+            if (station.status === "OPEN") {
+                marker.icon = green_marker;
+            }
+
+            if (station.status === "CLOSED") {
+                marker.icon = red_marker;
+            }
+        }
     }
 }
