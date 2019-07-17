@@ -106,7 +106,7 @@ class Slider {
 		this.refreshSlider();
 		if (this.timer !== null) {
 			window.clearInterval(this.timer);
-			this.timer = window.setInterval(this.next_slide.bind(this), 5000);
+			this.timer = window.setInterval(this.nextSlide.bind(this), 5000);
 		}
 	}
 
