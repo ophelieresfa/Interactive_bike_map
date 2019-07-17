@@ -27,7 +27,15 @@ class Slider {
 		document.addEventListener("keydown", this.keyControl.bind(this));
 	};
 
-	playSlide() {}
+	playSlide() {
+		this.index++;
+
+		if (this.index === this.slides.length) {
+			this.index = 0;
+		}
+
+		this.refreshSlider();
+	}
 
 	refreshSlider() {}
 
