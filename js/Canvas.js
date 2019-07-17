@@ -3,7 +3,12 @@
 
 class Canvas {
 
+    // Add method for draw in canvas with mouse
+
     draw() {
+
+        // Initialize canvas
+
         let canvas = document.getElementById('sign');
         let ctx = canvas.getContext('2d');
 
@@ -15,12 +20,15 @@ class Canvas {
             mousedown(event)
         });
 
+        // Function for draw
+
         function mousedown(event) {
             ctx.beginPath();
             ctx.moveTo(event.offsetX, event.offsetY);
             canvas.addEventListener("mousemove", paint);
         }
 
+        // Function for display draw
 
         function paint(event) {
             let alertMessage = document.getElementById("alert_message");
@@ -34,12 +42,19 @@ class Canvas {
             mouseup(event)
         });
 
+        // Function for stop draw
+
         function mouseup() {
             canvas.removeEventListener("mousemove", paint);
         }
     }
 
+    // Add method for draw in canvas with touch
+
     initTouch() {
+
+        // Initialize canvas
+
         let canvas = document.getElementById('sign');
         let ctx = canvas.getContext('2d');
 
@@ -51,12 +66,15 @@ class Canvas {
             touchdown(event)
         });
 
+        // Function for draw
+
         function touchdown(event) {
             ctx.beginPath();
             ctx.moveTo(event.offsetX, event.offsetY);
             canvas.addEventListener("touchmove", paint);
         }
 
+        // Function for display draw
 
         function paint(event) {
             let alertMessage = document.getElementById("alert_message");
@@ -70,10 +88,14 @@ class Canvas {
             touchup(event)
         });
 
+        // Function for stop draw
+
         function touchup() {
             canvas.removeEventListener("touchmove", paint);
         }
     }
+
+    // Add method clear draw in canvas
 
     clearDraw() {
         let canvas = document.getElementById('sign');
@@ -85,10 +107,14 @@ class Canvas {
         let reservValid = sessionStorage.getItem("validReserv");
         let timerDataPart = document.getElementById('timerInfo');
 
+        // Function for clear canvas
+
         document.getElementById("effacer").addEventListener('click', function () {
             sessionStorage.setItem("canvas", "0");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
+
+        // Add alert message
 
         document.getElementById("effacer").addEventListener('click', function () {
             alertMessage.innerText = "Vous devez signer avant de valider.";
@@ -106,6 +132,9 @@ class Canvas {
                 alertMessage.innerText = "Vous devez signer avant de valider.";
                 canvasPart.style.display = "flex";
                 mapId.style.display = "flex";
+
+                // Show informations reservations
+
                 if (reservValid !== "null") {
                     let reservData1 = document.getElementById("reserv_data");
                     let reservData2 = document.getElementById("reservData");
@@ -118,6 +147,8 @@ class Canvas {
         });
     }
 
+    // Add method kepp data about reservation
+
     keepData() {
         let timerDataPart = document.getElementById('timerInfo');
         let timerDataPart2 = document.getElementById('timer_info');
@@ -129,15 +160,22 @@ class Canvas {
         let stationAddress = sessionStorage.getItem("stationAddress");
         let reservData1 = document.getElementById("reserv_data");
 
+        // Show informations reservations
+
         if (reservValid === null) {
             timerDataPart.innerText = "Aucune réservation n'est enregistrée pour le moment.";
             reservData1.style.display = "none";
-        } else {
+        }
+
+        else {
             let reservData2 = document.getElementById("reservData");
             reservData2.style.display = "none";
             timerDataPart2.innerText = lastname + " " + firstname + " vous avez un vélo de réservé à la station : \n\n" + stationName + "\n" + stationAddress;
             document.getElementById("timer_info").style.paddingTop = "8rem";
             document.getElementById("compteur").style.paddingBottom = "8rem";
+
+            // Show timer information
+
             let x = setInterval(function () {
                 let expired = sessionStorage.getItem("expired");
                 let now = new Date().getTime();
@@ -170,6 +208,8 @@ class Canvas {
         }
     }
 
+    // Add method on click button "Cliquez ici pour réserver un autre vélo."
+
     newReserv() {
         let newReserv = document.getElementById("new_reserv");
         let timerDataPart2 = document.getElementById('timer_info');
@@ -184,6 +224,8 @@ class Canvas {
             timerDataPart2.innerText = lastname + " " + firstname + " vous avez un vélo de réservé à la station : \n\n" + stationName + "\n" + stationAddress;
         });
     }
+
+    // Add method for timer validation reservation
 
     timer() {
         let tps = 20 * 60 * 1000;
