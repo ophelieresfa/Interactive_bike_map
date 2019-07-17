@@ -37,7 +37,10 @@ class Slider {
 		this.refreshSlider();
 	}
 
-	refreshSlider() {}
+	refreshSlider() {
+		document.querySelector("#slider img").src = this.slides[this.index];
+		document.querySelector('#slider figcaption').textContent = this.descriptions[this.index];
+	}
 
 	pauseSlide() {}
 
