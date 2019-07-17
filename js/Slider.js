@@ -19,6 +19,12 @@ class Slider {
 		];
 		this.index = -1;
 		this.timer = window.setInterval(this.nextSlide.bind(this), 5000);
+
+		document.getElementById("play_button").addEventListener("click", this.playSlide.bind(this));
+		document.getElementById("pause_button").addEventListener("click", this.pauseSlide.bind(this));
+		document.getElementById("right_button").addEventListener("click", this.nextSlide.bind(this));
+		document.getElementById("left_button").addEventListener("click", this.prevSlide.bind(this));
+		document.addEventListener("keydown", this.keyControl.bind(this));
 	};
 
 	playSlide() {}
