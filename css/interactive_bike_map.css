@@ -227,8 +227,7 @@ nav li i {
     /* Properties for stations informations, form, canvas parts */
 
     #reservation aside,
-    #reservation form,
-    #canvas_part {
+    #reservation form {
         margin-right: 1rem;
         width: 35%;
     }
@@ -243,6 +242,11 @@ nav li i {
 
     #reservation aside ul {
         margin-top: 4rem;
+    }
+
+    #canvas_part {
+        margin: 1rem !important;
+        width: 35% !important;
     }
 }
 
