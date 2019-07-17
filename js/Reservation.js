@@ -33,5 +33,17 @@ class Reservation {
         });
     }
 
-    closeForm() {}
+    closeForm() {
+        let lastname = document.getElementById('lastname');
+        let firstname = document.getElementById('firstname');
+        let formPart = document.querySelector("form");
+        let canvasPart = document.getElementById("canvas_part");
+
+        document.getElementById("reserv").addEventListener('click',function () {
+            if ((lastname.value !== "") && (firstname.value !== "")) {
+                formPart.style.display = "none";
+                canvasPart.style.display = "flex";
+            }
+        });
+    }
 }
