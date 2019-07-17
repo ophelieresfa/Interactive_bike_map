@@ -14,7 +14,24 @@ class Reservation {
         });
     }
 
-    keepName() {}
+    keepName() {
+        let lastname = document.getElementById('lastname');
+        let firstname = document.getElementById('firstname');
+        let warningText = document.getElementById('warning_text');
+
+        if ((lastname.value === "") || (firstname.value === "")) {
+            document.getElementById("reserv").addEventListener('click', function () {
+                warningText.innerText = "Vous devez rentrer votre nom et prénom avant de réserver."
+            });
+        }
+
+        document.getElementById("reserv").addEventListener('click',function () {
+            if ((lastname !== undefined) && (firstname !== undefined)) {
+                localStorage.setItem('lastname', lastname.value);
+                localStorage.setItem('firstname', firstname.value);
+            }
+        });
+    }
 
     closeForm() {}
 }
