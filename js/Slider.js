@@ -20,4 +20,16 @@ class Slider {
 		this.index = -1;
 		this.timer = window.setInterval(this.nextSlide.bind(this), 5000);
 	};
+
+	playSlide() {}
+
+	refreshSlider() {}
+
+	pauseSlide() {}
+
+	nextSlide() {}
+
+	prevSlide() {}
+
+	keyControl() {}
 }
