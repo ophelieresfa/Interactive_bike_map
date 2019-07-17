@@ -2,9 +2,6 @@
 'use strict';
 
 class Canvas {
-    constructor() {
-        this.reservation = 0;
-    }
 
     draw() {
         let canvas = document.getElementById('sign');
@@ -194,7 +191,6 @@ class Canvas {
         let expired;
         document.getElementById("sign").addEventListener('click', function () {
             document.getElementById("signer").addEventListener('click', function () {
-                this.reservation = 1;
                 expired = sessionStorage.setItem("expired", countDownTime);
             });
         });
