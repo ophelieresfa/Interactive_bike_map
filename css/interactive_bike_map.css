@@ -77,6 +77,7 @@ header h1 {
 /* Properties for control button to slideshow part */
 
 nav {
+    text-align: center;
     margin-bottom: 2rem;
 }
 
