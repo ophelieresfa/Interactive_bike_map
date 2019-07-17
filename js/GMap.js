@@ -47,6 +47,69 @@ class GoogleMap {
             if (station.status === "CLOSED") {
                 marker.icon = red_marker;
             }
+
+            marker.addListener('click', (function() {
+                let reservationPart = document.querySelector("aside");
+                let formPart = document.querySelector("form");
+                let canvasPart = document.getElementById("canvas_part");
+                let alertMessage = document.getElementById("alert_message");
+                let mapId = document.getElementById("map");
+                let timerDataPart = document.getElementById('timer_info');
+                let newReserv = document.getElementById("new_reserv");
+                let reservationButton = document.getElementById("reserver");
+
+                reservationPart.style.display = "block";
+                formPart.style.display = "none";
+                canvasPart.style.display = "none";
+                nameStation.textContent = station.name;
+                addressStation.textContent = station.address;
+                bikesStation.textContent = "Il reste " + station.available_bikes + " vélo(s) disponible(s) dans la stations";
+
+                if (station.status === "OPEN") {
+                    statusStation.textContent = "Station Ouverte";
+                }
+
+                else {
+                    statusStation.textContent = "Station Fermée";
+                }
+
+                if (station.bike_stands > 0) {
+                    numbersStation.textContent = "Il y a " + station.bike_stands + " place(s) disponible(s)";
+                }
+
+                else {
+                    numbersStation.textContent = "Il n'y a plus de places disponible"
+                }
+
+                if (station.available_bikes > 0) {
+                    reservationButton.style.display = "block";
+                }
+
+                else {
+                    reservationButton.style.display = "none";
+                }
+
+                document.getElementById("sign").addEventListener('click', function () {
+                    document.getElementById("signer").addEventListener('click', function () {
+                        let lastname = localStorage.getItem('lastname');
+                        let firstname = localStorage.getItem('firstname');
+                        let reservData1 = document.getElementById("reserv_data");
+                        let reservData2 = document.getElementById("reservData");
+                        reservData2.style.display = "none";
+                        reservData1.style.display = "block";
+                        sessionStorage.setItem("stationName", station.name);
+                        sessionStorage.setItem("stationAddress", station.address);
+                        sessionStorage.setItem("validReserv", "1");
+                        alertMessage.style.display = "none";
+                        mapId.style.display = "none";
+                        canvasPart.style.display = "none";
+                        document.getElementById("timer_info").style.paddingTop = "8rem";
+                        document.getElementById("compteur").style.paddingBottom = "8rem";
+                        timerDataPart.innerText = "Félicitation " + lastname + " " + firstname + " vous avez un vélo de réservé à la station : \n\n" + station.name + "\n" + station.address;
+                        newReserv.style.display = "block";
+                    });
+                });
+            }));
         }
     }
 }
