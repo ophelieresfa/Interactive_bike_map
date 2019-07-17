@@ -74,7 +74,29 @@ class Slider {
 		}
 	}
 
-	prevSlide() {}
+	prevSlide() {
+		this.index--;
+		if (this.index < 0){
+			this.index = this.slides.length -1;
+		}
+		this.refreshSlider();
+		if (this.timer !== null) {
+			window.clearInterval(this.timer);
+			this.timer = window.setInterval(this.next_slide.bind(this), 5000);
+	}
 
-	keyControl() {}
+	keyControl(e) {
+			switch (e.code) {
+				case "ArrowLeft":
+					this.prevSlide();
+					break;
+				case "ArrowRight":
+					this.nextSlide();
+					break;
+				case "Space":
+					this.playSlide();
+					break;
+			}
+		}
+	}
 }
