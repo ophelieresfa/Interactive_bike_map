@@ -3,7 +3,7 @@
 
 class Canvas {
     constructor() {
-
+        this.reservation = 0;
     }
 }
 
