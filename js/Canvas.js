@@ -188,6 +188,48 @@ class Canvas {
         });
     }
 
-    timer() {}
-}
+    timer() {
+        let tps = 20 * 60 * 1000;
+        let countDownTime = new Date().getTime() + tps;
+        let expired;
+        document.getElementById("sign").addEventListener('click', function () {
+            document.getElementById("signer").addEventListener('click', function () {
+                this.reservation = 1;
+                expired = sessionStorage.setItem("expired", countDownTime);
+            });
+        });
 
+        let timerInfo = document.getElementById('compteur');
+        document.getElementById("sign").addEventListener('click', function () {
+            document.getElementById("signer").addEventListener('click', function () {
+                let x = setInterval(function () {
+                    let expired = sessionStorage.getItem("expired");
+                    let now = new Date().getTime();
+                    let duration = expired - now;
+                    let min = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+                    let sec = Math.floor((duration % (1000 * 60)) / 1000);
+                    sessionStorage.setItem("minutes", min);
+                    sessionStorage.setItem("secondes", sec);
+                    timerInfo.style.display = "block";
+                    timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + min + " minutes et " + sec + " secondes";
+
+                    if (min < 1) {
+                        timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + sec + " secondes";
+                    }
+
+                    if (sec < 10) {
+                        timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + min + " minutes et 0" + sec + " secondes";
+                    }
+
+                    if ((min < 1) && (sec < 10)) {
+                        timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + sec + " secondes";
+                    }
+
+                    if (min < 0) {
+                        timerInfo.innerText = "Votre réservation a expiré";
+                    }
+                });
+            });
+        });
+    }
+}
