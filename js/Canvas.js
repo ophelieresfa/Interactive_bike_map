@@ -78,7 +78,48 @@ class Canvas {
         }
     }
 
-    clearDraw() {}
+    clearDraw() {
+        let canvas = document.getElementById('sign');
+        let ctx = canvas.getContext('2d');
+        let alertMessage = document.getElementById("alert_message");
+        let canvasSign = sessionStorage.getItem("canvas");
+        let canvasPart = document.getElementById("canvas_part");
+        let mapId = document.getElementById("map");
+        let reservValid = sessionStorage.getItem("validReserv");
+        let timerDataPart = document.getElementById('timerInfo');
+
+        document.getElementById("effacer").addEventListener('click', function () {
+            sessionStorage.setItem("canvas", "0");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        document.getElementById("effacer").addEventListener('click', function () {
+            alertMessage.innerText = "Vous devez signer avant de valider.";
+        });
+
+        if (canvasSign !== "1") {
+            document.getElementById("signer").addEventListener('click', function () {
+                alertMessage.innerText = "Vous devez signer avant de valider.";
+            });
+        }
+
+        document.getElementById("effacer").addEventListener('click', function () {
+            document.getElementById("signer").addEventListener('click', function () {
+                sessionStorage.setItem("validReserv", null);
+                alertMessage.innerText = "Vous devez signer avant de valider.";
+                canvasPart.style.display = "flex";
+                mapId.style.display = "flex";
+                if (reservValid !== "null") {
+                    let reservData1 = document.getElementById("reserv_data");
+                    let reservData2 = document.getElementById("reservData");
+                    reservData1.style.display = "none";
+                    reservData2.style.display = "block";
+                    timerDataPart.innerText = "Aucune réservation n'est enregistrée pour le moment.";
+                    reservData1.style.display = "none";
+                }
+            });
+        });
+    }
 
     keepData() {}
 
