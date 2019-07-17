@@ -121,7 +121,57 @@ class Canvas {
         });
     }
 
-    keepData() {}
+    keepData() {
+        let timerDataPart = document.getElementById('timerInfo');
+        let timerDataPart2 = document.getElementById('timer_info');
+        let reservValid = sessionStorage.getItem("validReserv");
+        let timerInfo = document.getElementById('compteur');
+        let lastname = localStorage.getItem('lastname');
+        let firstname = localStorage.getItem('firstname');
+        let stationName = sessionStorage.getItem("stationName");
+        let stationAddress = sessionStorage.getItem("stationAddress");
+        let reservData1 = document.getElementById("reserv_data");
+
+        if (reservValid === null) {
+            timerDataPart.innerText = "Aucune réservation n'est enregistrée pour le moment.";
+            reservData1.style.display = "none";
+        } else {
+            let reservData2 = document.getElementById("reservData");
+            reservData2.style.display = "none";
+            timerDataPart2.innerText = lastname + " " + firstname + " vous avez un vélo de réservé à la station : \n\n" + stationName + "\n" + stationAddress;
+            document.getElementById("timer_info").style.paddingTop = "8rem";
+            document.getElementById("compteur").style.paddingBottom = "8rem";
+            let x = setInterval(function () {
+                let expired = sessionStorage.getItem("expired");
+                let now = new Date().getTime();
+                let duration = expired - now;
+                let min = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+                let sec = Math.floor((duration % (1000 * 60)) / 1000);
+
+                sessionStorage.setItem("minutes", min);
+                sessionStorage.setItem("secondes", sec);
+                timerInfo.style.display = "block";
+                timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + min + " minutes et " + sec + " secondes";
+
+                if (min < 1) {
+                    timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + sec + " secondes";
+                }
+
+                if (sec < 10) {
+                    timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + min + " minutes et 0" + sec + " secondes";
+                }
+
+                if ((min < 1) && (sec < 10)) {
+                    timerInfo.innerText = "Votre réservation reste enregistrée pendant encore : " + sec + " secondes";
+                }
+
+                if (min < 0) {
+                    timerInfo.innerText = "Votre réservation a expiré";
+                    timerDataPart2.style.display = "none";
+                }
+            });
+        }
+    }
 
     newReserv() {}
 
