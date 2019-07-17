@@ -3,6 +3,8 @@
 
 class Reservation {
 
+    // Add method for initialize form part
+
     initForm() {
         let button = document.getElementById("reserver");
         let reservationPart = document.querySelector("aside");
@@ -13,6 +15,8 @@ class Reservation {
             formPart.style.display = "flex";
         });
     }
+
+    // Add method for keep lastname and firstname in local storage
 
     keepName() {
         let lastname = document.getElementById('lastname');
@@ -32,6 +36,8 @@ class Reservation {
             }
         });
     }
+
+    // Add method for close form part and open canvas signature
 
     closeForm() {
         let lastname = document.getElementById('lastname');
