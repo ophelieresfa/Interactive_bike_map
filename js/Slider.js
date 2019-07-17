@@ -113,17 +113,18 @@ class Slider {
 	// Add method for key control of slideshow
 
 	keyControl(e) {
-			switch (e.code) {
-				case "ArrowLeft":
-					this.prevSlide();
-					break;
+		switch (e.code) {
+			case "ArrowLeft":
+				this.prevSlide();
+				break;
+
 				case "ArrowRight":
 					this.nextSlide();
 					break;
-				case "Space":
-					this.playSlide();
-					break;
-			}
+
+					case "Space":
+						this.playSlide();
+						break;
 		}
 	}
 }
