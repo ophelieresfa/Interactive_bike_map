@@ -42,7 +42,22 @@ class Slider {
 		document.querySelector('#slider figcaption').textContent = this.descriptions[this.index];
 	}
 
-	pauseSlide() {}
+	pauseSlide() {
+		let icon = document.querySelector('#pause_button i');
+		let toggle  = document.querySelector('#pause_button');
+		
+		icon.classList.toggle('fa-play');
+		icon.classList.toggle('fa-pause');
+
+		if (this.timer == null) {
+			this.timer = window.setInterval(this.nextSlide.bind(this), 5000);
+		}
+
+		else {
+			window.clearInterval(this.timer);
+			this.timer = null;
+		}
+	}
 
 	nextSlide() {}
 
