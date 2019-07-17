@@ -8,4 +8,6 @@ class GoogleMap {
             lng: 2.295838
         };
     };
+
+    initMap(){}
 }
