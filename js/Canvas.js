@@ -173,7 +173,20 @@ class Canvas {
         }
     }
 
-    newReserv() {}
+    newReserv() {
+        let newReserv = document.getElementById("new_reserv");
+        let timerDataPart2 = document.getElementById('timer_info');
+        let mapId = document.getElementById("map");
+        newReserv.addEventListener('click', function () {
+            let lastname = localStorage.getItem('lastname');
+            let firstname = localStorage.getItem('firstname');
+            let stationName = sessionStorage.getItem("stationName");
+            let stationAddress = sessionStorage.getItem("stationAddress");
+            mapId.style.display = "block";
+            newReserv.style.display = "none";
+            timerDataPart2.innerText = lastname + " " + firstname + " vous avez un vélo de réservé à la station : \n\n" + stationName + "\n" + stationAddress;
+        });
+    }
 
     timer() {}
 }
