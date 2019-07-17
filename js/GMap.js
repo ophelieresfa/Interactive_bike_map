@@ -9,5 +9,10 @@ class GoogleMap {
         };
     };
 
-    initMap(){}
+    initMap(){
+        let map = new google.maps.Map(document.getElementById("map"), {
+            center : this.amien,
+            zoom: 14,
+        });
+    }
 }
