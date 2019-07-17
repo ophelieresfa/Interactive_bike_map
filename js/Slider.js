@@ -45,7 +45,7 @@ class Slider {
 	pauseSlide() {
 		let icon = document.querySelector('#pause_button i');
 		let toggle  = document.querySelector('#pause_button');
-		
+
 		icon.classList.toggle('fa-play');
 		icon.classList.toggle('fa-pause');
 
@@ -59,7 +59,20 @@ class Slider {
 		}
 	}
 
-	nextSlide() {}
+	nextSlide() {
+		this.index++;
+
+		if (this.index === this.slides.length) {
+			this.index = 0;
+		}
+
+		this.refreshSlider();
+
+		if (this.timer !== null) {
+			window.clearInterval(this.timer);
+			this.timer = window.setInterval(this.nextSlide.bind(this),5000);
+		}
+	}
 
 	prevSlide() {}
 
