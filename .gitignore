@@ -1,0 +1,8 @@
+# Ignore these hidden files from Mac OS X
+.DS_Store
+
+# Ignore swap files that have the swp and swo extensions
+.*.swp
+.*.swo
+.*.xml
+.*.iml
