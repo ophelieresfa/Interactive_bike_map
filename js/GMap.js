@@ -3,17 +3,27 @@
 
 class GoogleMap {
     constructor() {
+
+        // Add coordonates for center map
+
         this.amien = {
             lat: 49.894009,
             lng: 2.295838
         };
     };
 
+    // Add method for initialize map
+
     initMap(){
+
+        // Initialize map
+
         let map = new google.maps.Map(document.getElementById("map"), {
             center : this.amien,
             zoom: 14,
         });
+
+        // Call Ajax
 
         ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Amiens&apiKey=5b12c800cb5e0ad63cd05a39206e90b20254719d", function (reponse) {
             let stations = JSON.parse(reponse);
@@ -21,6 +31,8 @@ class GoogleMap {
                 createMarker(station);
             });
         });
+
+        // Created Markers
 
         function createMarker(station) {
             let green_marker = {
@@ -47,6 +59,8 @@ class GoogleMap {
             if (station.status === "CLOSED") {
                 marker.icon = red_marker;
             }
+
+            // Add event on click to markers
 
             marker.addListener('click', (function() {
                 let reservationPart = document.querySelector("aside");
@@ -88,6 +102,8 @@ class GoogleMap {
                 else {
                     reservationButton.style.display = "none";
                 }
+
+                // Add event listener on click to signature of canvas
 
                 document.getElementById("sign").addEventListener('click', function () {
                     document.getElementById("signer").addEventListener('click', function () {
