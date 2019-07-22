@@ -1,5 +1,5 @@
 // Strict mode
-'use strict';
+"use strict";
 
 class GoogleMap {
     constructor() {
@@ -36,21 +36,21 @@ class GoogleMap {
 
         function createMarker(station) {
             let green_marker = {
-                url: 'css/img/markers/01.png',
+                url: "css/img/markers/01.png",
                 scaledSize: new google.maps.Size(25, 40)};
             let red_marker = {
-                url: 'css/img/markers/02.png',
+                url: "css/img/markers/02.png",
                 scaledSize: new google.maps.Size(25, 40)};
             let marker = new google.maps.Marker({
                 position: station.position,
                 map: map,
                 title: station.name,
                 icon: "",});
-            let statusStation = document.getElementById('status');
-            let nameStation = document.getElementById('name');
-            let addressStation = document.getElementById('address');
-            let numbersStation = document.getElementById('numbers');
-            let bikesStation = document.getElementById('bikes');
+            let statusStation = document.getElementById("status");
+            let nameStation = document.getElementById("name");
+            let addressStation = document.getElementById("address");
+            let numbersStation = document.getElementById("numbers");
+            let bikesStation = document.getElementById("bikes");
 
             if (station.status === "OPEN") {
                 marker.icon = green_marker;
@@ -62,13 +62,13 @@ class GoogleMap {
 
             // Add event on click to markers
 
-            marker.addListener('click', (function() {
+            marker.addListener("click", (function() {
                 let reservationPart = document.querySelector("aside");
                 let formPart = document.querySelector("form");
                 let canvasPart = document.getElementById("canvas_part");
                 let alertMessage = document.getElementById("alert_message");
                 let mapId = document.getElementById("map");
-                let timerDataPart = document.getElementById('timer_info');
+                let timerDataPart = document.getElementById("timer_info");
                 let newReserv = document.getElementById("new_reserv");
                 let reservationButton = document.getElementById("reserver");
 
@@ -105,10 +105,10 @@ class GoogleMap {
 
                 // Add event listener on click to signature of canvas
 
-                document.getElementById("sign").addEventListener('click', function () {
-                    document.getElementById("signer").addEventListener('click', function () {
-                        let lastname = localStorage.getItem('lastname');
-                        let firstname = localStorage.getItem('firstname');
+                document.getElementById("sign").addEventListener("click", function () {
+                    document.getElementById("signer").addEventListener("click", function () {
+                        let lastname = localStorage.getItem("lastname");
+                        let firstname = localStorage.getItem("firstname");
                         let reservData1 = document.getElementById("reserv_data");
                         let reservData2 = document.getElementById("reservData");
                         reservData2.style.display = "none";
