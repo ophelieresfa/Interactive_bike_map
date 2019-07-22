@@ -11,11 +11,11 @@ function ajaxGet(url, callback) {
             // Call of callback function 
             callback(req.responseText);
         } else {
-            Console.error(req.status + " " + req.statusText + " " + url);
+            console.error(req.status + " " + req.statusText + " " + url);
         }
     });
     req.addEventListener("error", function () {
-        Console.error("Erreur réseau avec l'URL " + url);
+        console.error("Erreur réseau avec l'URL " + url);
     });
     req.send(null);
 }
