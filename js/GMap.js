@@ -92,7 +92,7 @@ class GoogleMap {
                 }
 
                 else {
-                    numbersStation.textContent = "Il n'y a plus de places disponible"
+                    numbersStation.textContent = "Il n'y a plus de places disponible";
                 }
 
                 if (station.available_bikes > 0) {
