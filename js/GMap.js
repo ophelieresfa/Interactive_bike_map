@@ -35,10 +35,10 @@ class GoogleMap {
         // Created Markers
 
         function createMarker(station) {
-            let green_marker = {
+            let greenMarker = {
                 url: "css/img/markers/01.png",
                 scaledSize: new google.maps.Size(25, 40)};
-            let red_marker = {
+            let redMarker = {
                 url: "css/img/markers/02.png",
                 scaledSize: new google.maps.Size(25, 40)};
             let marker = new google.maps.Marker({
@@ -53,11 +53,11 @@ class GoogleMap {
             let bikesStation = document.getElementById("bikes");
 
             if (station.status === "OPEN") {
-                marker.icon = green_marker;
+                marker.icon = greenMarker;
             }
 
             if (station.status === "CLOSED") {
-                marker.icon = red_marker;
+                marker.icon = redMarker;
             }
 
             // Add event on click to markers
