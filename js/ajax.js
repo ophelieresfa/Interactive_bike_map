@@ -1,5 +1,5 @@
 // Strict mode
-'use strict';
+"use strict";
 
 // AJAX GET Call
 // Parameters : URL and callback function in case of success
