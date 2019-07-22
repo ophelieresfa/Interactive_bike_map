@@ -1,5 +1,5 @@
 // Strict mode
-'use strict';
+"use strict";
 
 // Creates the object slider
 
