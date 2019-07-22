@@ -1,5 +1,5 @@
 // Strict mode
-'use strict';
+"use strict";
 
 class Slider {
 	constructor() {
@@ -7,21 +7,21 @@ class Slider {
 		// Add images for slideshow
 
 		this.slides = [
-			'css/img/diapo_1.jpg',
-			'css/img/diapo_2.jpg',
-			'css/img/diapo_3.jpg',
-			'css/img/diapo_4.jpg',
-			'css/img/diapo_5.jpg'
+			"css/img/diapo_1.jpg",
+			"css/img/diapo_2.jpg",
+			"css/img/diapo_3.jpg",
+			"css/img/diapo_4.jpg",
+			"css/img/diapo_5.jpg"
 		];
 
 		// Add descriptions for slideshow
 
 		this.descriptions = [
-			'Choisissez une station parmi celles sur la carte. Elles sont indiquées par un marqueur.',
-			'Une fenêtre avec les informations de la station apparait. Vous avez la possibilité de réserver en cliquant sur le bouton "réserver".',
-			'Rentrez votre nom et prénom.',
-			'Puis signez le formulaire, cliquez sur "signer".',
-			'Votre réservation est enregistrée, Si vous choisissez de réserver un autre vélo, celui-ci sera remplacé par le nouveau.'
+			"Choisissez une station parmi celles sur la carte. Elles sont indiquées par un marqueur.",
+			"Une fenêtre avec les informations de la station apparait. Vous avez la possibilité de réserver en cliquant sur le bouton "réserver".",
+			"Rentrez votre nom et prénom.",
+			"Puis signez le formulaire, cliquez sur "signer".",
+			"Votre réservation est enregistrée, Si vous choisissez de réserver un autre vélo, celui-ci sera remplacé par le nouveau."
 		];
 
 		// Add index for slideshow
@@ -57,17 +57,17 @@ class Slider {
 
 	refreshSlider() {
 		document.querySelector("#slider img").src = this.slides[this.index];
-		document.querySelector('#slider figcaption').textContent = this.descriptions[this.index];
+		document.querySelector("#slider figcaption").textContent = this.descriptions[this.index];
 	}
 
 	// Add method for pause slides of slideshow
 
 	pauseSlide() {
-		let icon = document.querySelector('#pause_button i');
-		let toggle  = document.querySelector('#pause_button');
+		let icon = document.querySelector("#pause_button i");
+		let toggle  = document.querySelector("#pause_button");
 
-		icon.classList.toggle('fa-play');
-		icon.classList.toggle('fa-pause');
+		icon.classList.toggle("fa-play");
+		icon.classList.toggle("fa-pause");
 
 		if (this.timer == null) {
 			this.timer = window.setInterval(this.nextSlide.bind(this), 5000);
