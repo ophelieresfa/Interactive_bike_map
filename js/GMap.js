@@ -10,7 +10,7 @@ class GoogleMap {
             lat: 49.894009,
             lng: 2.295838
         };
-    };
+    }
 
     // Add method for initialize map
 
