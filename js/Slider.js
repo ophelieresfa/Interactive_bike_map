@@ -18,9 +18,9 @@ class Slider {
 
 		this.descriptions = [
 			"Choisissez une station parmi celles sur la carte. Elles sont indiquées par un marqueur.",
-			"Une fenêtre avec les informations de la station apparait. Vous avez la possibilité de réserver en cliquant sur le bouton "réserver".",
+			"Une fenêtre avec les informations de la station apparait. Vous avez la possibilité de réserver en cliquant sur le bouton 'réserver'.",
 			"Rentrez votre nom et prénom.",
-			"Puis signez le formulaire, cliquez sur "signer".",
+			"Puis signez le formulaire, cliquez sur 'signer'.",
 			"Votre réservation est enregistrée, Si vous choisissez de réserver un autre vélo, celui-ci sera remplacé par le nouveau."
 		];
 
@@ -39,7 +39,7 @@ class Slider {
 		document.getElementById("right_button").addEventListener("click", this.nextSlide.bind(this));
 		document.getElementById("left_button").addEventListener("click", this.prevSlide.bind(this));
 		document.addEventListener("keydown", this.keyControl.bind(this));
-	};
+	}
 
 	// Add method for play slides of slideshow
 
